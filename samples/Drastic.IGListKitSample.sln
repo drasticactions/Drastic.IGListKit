@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drastic.IGListKitSample", "Drastic.IGListKitSample\Drastic.IGListKitSample.csproj", "{BDDEB252-242D-4F2F-8FFE-FF773E2E9170}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drastic.IGListKitSample.iOS", "Drastic.IGListKitSample.iOS\Drastic.IGListKitSample.iOS.csproj", "{C689AE69-CDD0-407C-99E9-E511734E28C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drastic.IGListKitSample.Catalyst", "Drastic.IGListKitSample.Catalyst\Drastic.IGListKitSample.Catalyst.csproj", "{ECA2713F-A3AB-4958-9CBF-C55D1EBCEA29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drastic.IGListKitSample.macOS", "Drastic.IGListKitSample.macOS\Drastic.IGListKitSample.macOS.csproj", "{173D2EEA-CACE-479A-899A-2EADD8E059A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drastic.IGListKitSample.tvOS", "Drastic.IGListKitSample.tvOS\Drastic.IGListKitSample.tvOS.csproj", "{17B39D1E-4CC6-4A64-BA13-E6E3022C8B72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDDEB252-242D-4F2F-8FFE-FF773E2E9170}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDDEB252-242D-4F2F-8FFE-FF773E2E9170}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDDEB252-242D-4F2F-8FFE-FF773E2E9170}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDDEB252-242D-4F2F-8FFE-FF773E2E9170}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C689AE69-CDD0-407C-99E9-E511734E28C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C689AE69-CDD0-407C-99E9-E511734E28C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C689AE69-CDD0-407C-99E9-E511734E28C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C689AE69-CDD0-407C-99E9-E511734E28C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECA2713F-A3AB-4958-9CBF-C55D1EBCEA29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECA2713F-A3AB-4958-9CBF-C55D1EBCEA29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECA2713F-A3AB-4958-9CBF-C55D1EBCEA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECA2713F-A3AB-4958-9CBF-C55D1EBCEA29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{173D2EEA-CACE-479A-899A-2EADD8E059A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{173D2EEA-CACE-479A-899A-2EADD8E059A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{173D2EEA-CACE-479A-899A-2EADD8E059A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{173D2EEA-CACE-479A-899A-2EADD8E059A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17B39D1E-4CC6-4A64-BA13-E6E3022C8B72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17B39D1E-4CC6-4A64-BA13-E6E3022C8B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17B39D1E-4CC6-4A64-BA13-E6E3022C8B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17B39D1E-4CC6-4A64-BA13-E6E3022C8B72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

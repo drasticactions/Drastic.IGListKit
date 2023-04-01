@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net7.0-ios;net7.0-maccatalyst;net7.0-macos;net7.0-tvos</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <IsBindingProject>true</IsBindingProject>
+    <IsPackable>true</IsPackable>
+    <Description>Binding of IGListKit for .NET iOS, Mac Catalyst, tvOS, and MacOS Projects</Description>
+     <Company>Drastic Actions</Company>
+		<Authors>$(Company)</Authors>
+		<Copyright>Copyright (C) Drastic Actions</Copyright>
+		<IsBindingProject>true</IsBindingProject>
+		<IsPackable>true</IsPackable>
+		<PackageTags>ios catalyst IGListKit ListView tvos macos UIView</PackageTags>
+		<PackageProjectUrl>https://github.com/drasticactions/Drastic.IGListKit</PackageProjectUrl>
+		<PackageReleaseNotes>https://github.com/drasticactions/Drastic.IGListKit/blob/main/CHANGELOG.md</PackageReleaseNotes>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>favicon.png</PackageIcon>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<DebugType>embedded</DebugType>
+		<Version>1.0.1</Version>
+		<CompressBindingResourcePackage>true</CompressBindingResourcePackage>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' != 'net7.0-macos'">
+    <ObjcBindingApiDefinition Include="iOSApiDefinitions.cs" />
+    <ObjcBindingCoreSource Include="iOSStructsAndEnums.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-macos'">
+    <ObjcBindingApiDefinition Include="macOSApiDefinitions.cs" />
+    <ObjcBindingCoreSource Include="macOSStructsAndEnums.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="" Visible="false" />
+		<None Include="$(MSBuildThisFileDirectory)favicon.png" Pack="true" PackagePath="" Visible="false" />
+	</ItemGroup>
+
+  <ItemGroup>
+		<NativeReference Include="..\Frameworks\IGListKit.xcframework">
+			<Kind>Framework</Kind>
+			<SmartLink>False</SmartLink>
+		</NativeReference>
+    <NativeReference Include="..\Frameworks\IGListDiffKit.xcframework">
+			<Kind>Framework</Kind>
+			<SmartLink>False</SmartLink>
+		</NativeReference>
+	</ItemGroup>
+</Project>
