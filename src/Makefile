@@ -1,7 +1,7 @@
-XBUILD=/Applications/Xcode_14.2.0.app/Contents/Developer/usr/bin/xcodebuild
+XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
 ROOT=$(PWD)
 PROJECT_ROOT=$(ROOT)/../external/IGListKit
-PROJECT_IOS=$(PROJECT_ROOT)/IGListKit.xcworkspace
+PROJECT_IOS=$(PROJECT_ROOT)/IGListKit.xcodeproj
 BUILD_ROOT=$(PROJECT_ROOT)/build
 PROJECTNAME=IGListKit
 FRAMEWORK_PATH=Products/Library/Frameworks/IGListKit.framework
@@ -29,22 +29,22 @@ MACOS_DIFFHEADERS=$(FRAMEWORKS)/IGListDiffKit.xcframework/macos-arm64_x86_64/IGL
 build: iossimulator iosdevice maccatalyst tvossimulator tvosdevice mac xcframework
 
 iossimulator:
-	$(XBUILD) archive ONLY_ACTIVE_ARCH=NO -workspace $(PROJECT_IOS) -scheme $(TARGET_IOS) -configuration Debug -destination "generic/platform=iOS Simulator" -archivePath $(BUILD_ROOT)/simulator.xcarchive -sdk iphonesimulator SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+	$(XBUILD) archive ONLY_ACTIVE_ARCH=NO -project $(PROJECT_IOS) -scheme $(TARGET_IOS) -configuration Debug -destination "generic/platform=iOS Simulator" -archivePath $(BUILD_ROOT)/simulator.xcarchive -sdk iphonesimulator SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
 	
 iosdevice:
-	$(XBUILD) archive ONLY_ACTIVE_ARCH=NO -workspace $(PROJECT_IOS) -scheme $(TARGET_IOS) -configuration Debug -destination "generic/platform=iOS" -archivePath $(BUILD_ROOT)/iOS.xcarchive -sdk iphoneos SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+	$(XBUILD) archive ONLY_ACTIVE_ARCH=NO -project $(PROJECT_IOS) -scheme $(TARGET_IOS) -configuration Debug -destination "generic/platform=iOS" -archivePath $(BUILD_ROOT)/iOS.xcarchive -sdk iphoneos SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
 
 maccatalyst:
-	$(XBUILD) archive ONLY_ACTIVE_ARCH=NO -workspace $(PROJECT_IOS) -scheme $(TARGET_IOS) -destination "generic/platform=macOS,variant=Mac Catalyst,name=Any Mac" -archivePath $(BUILD_ROOT)/catalyst.xcarchive SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+	$(XBUILD) archive ONLY_ACTIVE_ARCH=NO -project $(PROJECT_IOS) -scheme $(TARGET_IOS) -destination "generic/platform=macOS,variant=Mac Catalyst,name=Any Mac" -archivePath $(BUILD_ROOT)/catalyst.xcarchive SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
 
 tvossimulator:
-	$(XBUILD) archive ONLY_ACTIVE_ARCH=NO -workspace $(PROJECT_IOS) -scheme $(TARGET_TVOS) -archivePath $(BUILD_ROOT)/tvsimulator.xcarchive -sdk appletvsimulator SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+	$(XBUILD) archive ONLY_ACTIVE_ARCH=NO -project $(PROJECT_IOS) -scheme $(TARGET_TVOS) -archivePath $(BUILD_ROOT)/tvsimulator.xcarchive -sdk appletvsimulator SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
 
 tvosdevice:
-	$(XBUILD) archive ONLY_ACTIVE_ARCH=NO -workspace $(PROJECT_IOS) -scheme $(TARGET_TVOS) -archivePath $(BUILD_ROOT)/tvos.xcarchive -sdk appletvos SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+	$(XBUILD) archive ONLY_ACTIVE_ARCH=NO -project $(PROJECT_IOS) -scheme $(TARGET_TVOS) -archivePath $(BUILD_ROOT)/tvos.xcarchive -sdk appletvos SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
 
 mac:
-	$(XBUILD) archive ONLY_ACTIVE_ARCH=NO -workspace $(PROJECT_IOS) -scheme $(TARGET_MACOS) -destination "generic/platform=macOS,name=Any Mac" -archivePath $(BUILD_ROOT)/mac.xcarchive SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+	$(XBUILD) archive ONLY_ACTIVE_ARCH=NO -project $(PROJECT_IOS) -scheme $(TARGET_MACOS) -destination "generic/platform=macOS,name=Any Mac" -archivePath $(BUILD_ROOT)/mac.xcarchive SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
 
 xcframework:
 	rm -rf $(BUILD_ROOT)/IGListKit.xcframework
